@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:khana_khazana/data/dummy_data.dart';
+import 'package:khana_khazana/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -10,19 +12,16 @@ class CategoriesScreen extends StatelessWidget {
           title: const Text('Choose Your Category'),
         ),
         body: GridView(
+          padding: const EdgeInsets.all(24),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: 3 / 2,
             crossAxisSpacing: 20,
             mainAxisSpacing: 20,
           ),
-          children: const [
-            Text('Parth'),
-            Text('Parth'),
-            Text('Parth'),
-            Text('Parth'),
-            Text('Parth'),
-            Text('Parth'),
+          children: [
+            for (final category in availableCategories)
+              CategoryGridItem(category: category)
           ],
         ));
   }
