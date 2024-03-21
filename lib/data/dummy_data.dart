@@ -157,7 +157,7 @@ const dummyMeals = [
       'c4',
     ],
     title: 'Wiener Schnitzel',
-    affordability: Affordability.luxurious,
+    affordability: Affordability.pricey,
     complexity: Complexity.challenging,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gif/flutter_gif.dart';
 import 'package:khana_khazana/models/meal.dart';
 import 'package:khana_khazana/widgets/meal_item.dart';
 

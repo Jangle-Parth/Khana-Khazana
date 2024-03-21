@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:khana_khazana/models/meal.dart';
+import 'package:khana_khazana/screens/meal_details.dart';
 import 'package:khana_khazana/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
@@ -28,7 +29,12 @@ class MealItem extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       elevation: 2,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (ctx) => MealDetailsScreen(meal: meal)));
+        },
         child: Stack(
           children: [
             FadeInImage(
