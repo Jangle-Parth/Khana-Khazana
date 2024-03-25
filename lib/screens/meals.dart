@@ -3,10 +3,10 @@ import 'package:khana_khazana/models/meal.dart';
 import 'package:khana_khazana/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
-  const MealsScreen({Key? key, required this.title, required this.meals})
+  const MealsScreen({Key? key, this.title, required this.meals})
       : super(key: key);
 
-  final String title;
+  final String? title;
   final List<Meal> meals;
 
   @override
@@ -28,10 +28,13 @@ class MealsScreen extends StatelessWidget {
         ),
       );
     }
+    if (title == null) {
+      return content;
+    }
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title!),
       ),
       body: content,
     );
