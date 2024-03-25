@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:khana_khazana/screens/categories.dart';
 import 'package:khana_khazana/screens/meals.dart';
 
@@ -32,15 +33,20 @@ class _TabsScreenState extends State<TabsScreen> {
         title: Text(activePageTitle),
       ),
       body: activePage,
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: _selectPage,
-        currentIndex: _selectedPageIndex,
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.set_meal), label: 'Categories'),
-          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favorites'),
+      bottomNavigationBar: GNav(
+        tabs: [
+          GButton(icon: Icons.home),
         ],
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   onTap: _selectPage,
+      //   currentIndex: _selectedPageIndex,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //         icon: Icon(Icons.set_meal), label: 'Categories'),
+      //     BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favorites'),
+      //   ],
+      // ),
     );
   }
 }
