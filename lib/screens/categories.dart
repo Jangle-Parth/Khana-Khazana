@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:khana_khazana/data/dummy_data.dart';
 import 'package:khana_khazana/models/category.dart';
+import 'package:khana_khazana/models/meal.dart';
 import 'package:khana_khazana/screens/meals.dart';
 import 'package:khana_khazana/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key});
+  const CategoriesScreen({super.key, required this.onToggleFavorite});
+  final void Function(Meal meal) onToggleFavorite;
 
   void _selectCategory(BuildContext context, Category category) {
     final filteredMeals = dummyMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
     Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (ctx) =>
-                MealsScreen(title: "Enjoy !!", meals: filteredMeals)));
+      context,
+      MaterialPageRoute(
+        builder: (ctx) => MealsScreen(
+          title: "Enjoy !!",
+          meals: filteredMeals,
+          onToggleFavorite: onToggleFavorite,
+        ),
+      ),
+    );
   }
 
   @override

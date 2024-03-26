@@ -5,8 +5,10 @@ import 'package:khana_khazana/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealItem extends StatelessWidget {
-  const MealItem({super.key, required this.meal});
+  const MealItem(
+      {super.key, required this.meal, required this.onToggleFavorite});
   final Meal meal;
+  final void Function(Meal meal) onToggleFavorite;
 
   //  as complexity and affordibilaity are enum
   String get complexityText {
@@ -33,7 +35,10 @@ class MealItem extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (ctx) => MealDetailsScreen(meal: meal)));
+                  builder: (ctx) => MealDetailsScreen(
+                        meal: meal,
+                        onToggleFavorite: onToggleFavorite,
+                      )));
         },
         child: Stack(
           children: [
