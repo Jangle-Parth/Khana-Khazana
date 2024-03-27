@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:khana_khazana/screens/categories.dart';
 import 'package:khana_khazana/screens/tabs.dart';
 
 final theme = ThemeData(
